@@ -9,7 +9,7 @@ import json
 from flask_ngrok import run_with_ngrok
 
 # ตั้งค่าการเชื่อมต่อ Neo4j
-driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "12345678"))
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=basic_auth("neo4j", "1"))
 
 # ใช้โมเดล SentenceTransformer สำหรับการคำนวณความเหมือนของข้อความ
 model = SentenceTransformer('sentence-transformers/distiluse-base-multilingual-cased-v2')
@@ -371,8 +371,8 @@ def load_car_data(filename='car_data.json'):
         return json.load(f)
     
 # ตั้งค่า LINE API
-access_token = 'A0aobhKEnLStv6/dpp/xmcDjLdNTKiMHAV7hHrfESiRpTGcQmlT3258Jphc4CK8qvNRhs3eYTJ7k4tPEruCPy/jxRvDwq80UmRnfyA/LzZkR+eAUMCUelxrOCuCSw+VHU6QyIfn7zbx5oqqh/9ahjgdB04t89/1O/w1cDnyilFU='
-secret = '0230e7a07ae588d4db5a2e206bbec687'
+access_token = ''
+secret = ''
 line_bot_api = LineBotApi(access_token)
 handler = WebhookHandler(secret)
 
